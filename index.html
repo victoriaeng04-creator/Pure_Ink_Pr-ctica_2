@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pure Ink · Estudio de tatuaje en Malasaña, Madrid</title>
+  <meta name="description" content="Estudio de tatuaje en Malasaña (Madrid): fine line, blackwork, ornamental y lettering. Pide cita previa.">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap">
+
+  <!-- AOS (animaciones al hacer scroll) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- Cabecera (rama: header-menu) -->
+  <header class="cabecera">
+    <div class="contenedor">
+      <a href="index.html" class="logo">
+        <img src="img/logo-pureink.png" alt="Pure Ink · inicio" width="827" height="449">
+      </a>
+
+      <button class="menu-boton" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="menu" id="menu-principal" aria-label="Principal">
+        <ul>
+          <li><a href="index.html#estudio" aria-current="page">Estudio</a></li>
+          <li><a href="artistas.html">Artistas</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="cita.html">Cita previa</a></li>
+        </ul>
+      </nav>
+
+      <a href="cita.html" class="btn btn--relleno">Pide cita</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero con vídeo de fondo + Typed.js (rama: inicio-hero) -->
+    <section class="hero seccion-oscura" aria-label="Presentación">
+    </section>
+
+    <!-- Estudio: titular + dos bloques de texto (rama: inicio-estudio) -->
+    <section class="estudio" id="estudio">
+    </section>
+
+    <!-- Galería con filtros, hover y carga al hacer scroll (rama: inicio-galeria) -->
+    <section class="galeria-inicio" aria-labelledby="titulo-galeria">
+    </section>
+
+    <!-- Piezas recientes: slider automático (rama: slider) -->
+    <section class="recientes seccion-oscura" aria-labelledby="titulo-recientes">
+    </section>
+
+    <!-- Nuestro equipo (rama: inicio-equipo) -->
+    <section class="equipo" aria-labelledby="titulo-equipo">
+    </section>
+
+    <!-- Llamada a la acción (rama: inicio-equipo) -->
+    <section class="cta" aria-labelledby="titulo-cta">
+    </section>
+  </main>
+
+  <!-- Pie de página (rama: footer) -->
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__columnas">
+        <div>
+          <img src="img/logo-pureink.png" alt="Pure Ink" width="827" height="449" class="pie__logo">
+          <p>Estudio de tatuaje en Malasaña.</p>
+        </div>
+        <address>
+          <p class="etiqueta">Estudio</p>
+          C/ San Vicente Ferrer, 34<br>
+          Malasaña · 28004 Madrid<br>
+          Metro Tribunal (L1, L10)
+        </address>
+        <div>
+          <p class="etiqueta">Horario</p>
+          <p>Mar – Sáb · 11:00 – 20:00<br>Solo con cita previa</p>
+        </div>
+        <div>
+          <p class="etiqueta">Contacto</p>
+          <p>
+            Tel. <a href="tel:+34910234718">910 23 47 18</a><br>
+            Gmail <a href="mailto:pureink.malasana@gmail.com">pureink.malasana@gmail.com</a><br>
+            WhatsApp <a href="https://wa.me/34655813209">655 81 32 09</a><br>
+            Instagram <a href="https://www.instagram.com/pureink.malasana">@pureink.malasana</a>
+          </p>
+        </div>
+      </div>
+      <div class="pie__legal">
+        <span>© 2026 Pure Ink</span>
+        <a href="#">Aviso legal</a>
+        <a href="#">Privacidad</a>
+        <a href="#top">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery desde CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Typed.js (texto que se escribe solo en el hero) -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

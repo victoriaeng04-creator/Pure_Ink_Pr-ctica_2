@@ -1,0 +1,243 @@
+/* 1. Variables (guía de estilo) */
+:root {
+  /* Color */
+  --azul: #1530FF;              /* azul neón de marca (sale del brillo del logo) */
+  --azul-capa: rgba(21, 48, 255, .5); /* capa del hover en galería */
+  --negro: #1a1a1a;             /* texto principal */
+  --negro-fondo: #111111;       /* footer */
+  --oscuro: #1c1c1c;            /* secciones oscuras */
+  --gris-texto: #6b6b6b;        /* etiquetas sobre blanco */
+  --gris-claro: #a8a8a8;        /* etiquetas sobre oscuro */
+  --linea: #e3e3e3;             /* separadores sobre blanco */
+  --linea-oscura: #333333;      /* separadores sobre oscuro */
+  --blanco-roto: #f2f2f2;       /* texto sobre oscuro */
+
+  /* Tipografía */
+  --fuente-titulos: 'Outfit', system-ui, sans-serif;
+  --fuente-texto: 'Inter', system-ui, sans-serif;
+  --fuente-detalles: 'Outfit', system-ui, sans-serif; /* botones, filtros, etiquetas y numeraciones */
+
+  --peso-titulo: 700;
+  --peso-subtitulo: 500;
+  --peso-texto: 400;
+  --peso-fino: 200;
+  --peso-boton: 600;
+
+  --tracking-boton: .14em;
+  --tracking-etiqueta: .12em;
+
+  /* Tamaños (móvil; se amplían en los breakpoints) */
+  --t-h1: 48px;
+  --t-h2: 32px;
+  --t-h3: 22px;
+  --t-subtitulo: 20px;
+  --t-texto: 16px;
+  --t-pequeno: 14px;
+  --t-etiqueta: 11px;
+  --t-boton: 15px;
+
+  /* Espaciado (escala de 8 px) */
+  --e-1: 8px;
+  --e-2: 16px;
+  --e-3: 24px;
+  --e-4: 32px;
+  --e-5: 40px;
+  --e-7: 56px;
+  --e-8: 64px;
+  --e-9: 72px;
+
+  /* Layout */
+  --margen: 20px;               /* margen lateral de página */
+  --gutter: 16px;               /* separación entre columnas */
+  --ancho-max: 1280px;
+  --alto-header: 64px;
+
+  /* Componentes */
+  --alto-boton: 60px;           /* tablet y móvil */
+  --padding-boton: 0 40px;
+  --radio-pastilla: 99px;       /* filtros y etiquetas de estilo */
+  --transicion: .3s ease;
+}
+
+/*  2. Reset básico  */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  font-weight: var(--peso-texto);
+  font-size: var(--t-texto);
+  line-height: 1.6;
+  color: var(--negro);
+  background: var(--blanco);
+}
+
+img,
+video { display: block; max-width: 100%; height: auto; }
+
+a { color: inherit; text-decoration: none; }
+
+button { font: inherit; cursor: pointer; }
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: var(--fuente-titulos);
+  font-weight: var(--peso-titulo);
+  line-height: 1.05;
+  letter-spacing: -.01em;
+}
+
+h1 { font-size: var(--t-h1); }
+h2 { font-size: var(--t-h2); }
+h3 { font-size: var(--t-h3); }
+
+p { margin: 0; }
+
+/* Accesibilidad: foco visible y texto solo para lectores de pantalla */
+:focus-visible { outline: 2px solid var(--azul); outline-offset: 3px; }
+
+.solo-lector {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/*  3. Utilidades */
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-max);
+  margin-inline: auto;
+  padding-inline: var(--margen);
+}
+
+.seccion-oscura { background: var(--oscuro); color: var(--blanco-roto); }
+
+.etiqueta {
+  font-family: var(--fuente-detalles);
+  font-size: var(--t-etiqueta);
+  font-weight: 500;
+  letter-spacing: var(--tracking-etiqueta);
+  color: var(--gris-texto);
+}
+.seccion-oscura .etiqueta { color: var(--gris-claro); }
+
+.subtitulo {
+  font-size: var(--t-subtitulo);
+  font-weight: var(--peso-subtitulo);
+  line-height: 1.3;
+}
+
+.texto-fino { font-weight: var(--peso-fino); }
+
+.azul { color: var(--azul); }
+
+/* 4. Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--alto-boton);
+  padding: var(--padding-boton);
+  border: 1.5px solid var(--negro);
+  background: transparent;
+  color: var(--negro);
+  font-family: var(--fuente-detalles);
+  font-size: var(--t-boton);
+  font-weight: var(--peso-boton);
+  letter-spacing: var(--tracking-boton);
+  transition: background-color var(--transicion), color var(--transicion), border-color var(--transicion);
+}
+
+.btn--relleno {
+  background: var(--azul);
+  border-color: var(--azul);
+  color: var(--blanco);
+}
+.btn--relleno:hover { background: var(--negro); border-color: var(--negro); }
+
+.seccion-oscura .btn { border-color: var(--blanco-roto); color: var(--blanco-roto); }
+.seccion-oscura .btn--relleno { background: var(--azul); border-color: var(--azul); color: var(--blanco); }
+
+/* Filtros de la galería (pastillas) */
+.filtro {
+  height: 44px;
+  padding: 0 20px;
+  border: 1.5px solid currentColor;
+  border-radius: var(--radio-pastilla);
+  background: transparent;
+  font-family: var(--fuente-detalles);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+.filtro.activo { background: var(--azul); border-color: var(--azul); color: var(--blanco); }
+
+/* 5. Cabecera (rama: header-menu) */
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--alto-header);
+  background: var(--blanco);
+  border-bottom: 1px solid var(--linea);
+}
+
+.cabecera .contenedor {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img { height: 46px; width: auto; }
+
+/*  6. Pie de página (rama: footer)  */
+.pie {
+  background: var(--negro-fondo);
+  color: var(--blanco-roto);
+  padding-block: var(--e-8) 0;
+}
+
+
+
+/* 7. Breakpoints */
+
+/* Tablet */
+@media (min-width: 768px) {
+  :root {
+    --margen: 40px;
+    --gutter: 24px;
+    --t-h1: 72px;
+    --t-h2: 40px;
+    --t-subtitulo: 24px;
+  }
+}
+
+/* Portátil */
+@media (min-width: 1024px) {
+  :root {
+    --t-h1: 84px;
+    --alto-header: 80px;
+    --alto-boton: 46px;
+    --padding-boton: 0 24px;
+    --t-boton: 14px;
+  }
+  .logo img { height: 53px; }
+}
+
+/* Escritorio */
+@media (min-width: 1280px) {
+  :root {
+    --margen: 64px;
+    --t-h1: 96px;
+    --t-h2: 44px;
+    --t-subtitulo: 34px;
+    --t-texto: 17px;
+  }
+}
+
+/* Movimiento reducido: sin animaciones */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
