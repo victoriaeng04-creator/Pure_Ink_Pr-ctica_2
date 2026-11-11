@@ -23,8 +23,8 @@
   --peso-fino: 200;
   --peso-boton: 600;
 
-  --tracking-boton: .14em;
-  --tracking-etiqueta: .12em;
+  --tracking-boton: .02em;
+  --tracking-etiqueta: .04em;
 
   /* Tamaños (móvil; se amplían en los breakpoints) */
   --t-h1: 48px;
