@@ -47,10 +47,24 @@ $(function () {
 
 
   /* Hero (rama: inicio-hero) 
-     1) fadeIn escalonado: etiqueta - logo - frase Typed - botones
-     2) Typed.js: fine line - blackwork - ornamental - lettering (loop) */
-  if (typeof Typed !== 'undefined' && $('#typed').length) {
-    // new Typed('#typed', { ... });
+    fadeIn escalonado + typed.js */
+  const $aparecen = $('.hero__aparece');
+  if ($aparecen.length) {
+    $aparecen.css('opacity', 0).each(function (i) {
+      $(this).delay(300 * i).animate({ opacity: 1 }, 600);
+    });
+
+    if (window.Typed) {
+      $('#typed').text('');
+      new Typed('#typed', {
+        strings: ['fine line', 'blackwork', 'ornamental', 'lettering'],
+        typeSpeed: 70,
+        backSpeed: 40,
+        backDelay: 1600,
+        startDelay: 900,   // empieza cuando la frase ya ha aparecido
+        loop: true
+      });
+    }
   }
 
 
