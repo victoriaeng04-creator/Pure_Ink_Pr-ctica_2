@@ -14,7 +14,7 @@ $(function () {
 
   /* Hero (rama: inicio-hero) 
      1) fadeIn escalonado: etiqueta - logo - frase Typed - botones
-     2) Typed.js: fine line - blackwork - ornamental - lettering (loop)
+     2) Typed.js: fine line - blackwork - ornamental - lettering (loop) */
   if (typeof Typed !== 'undefined' && $('#typed').length) {
     // new Typed('#typed', { ... });
   }
