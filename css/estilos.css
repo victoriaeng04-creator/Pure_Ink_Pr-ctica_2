@@ -476,6 +476,39 @@ p { margin: 0; }
   .hero { min-height: 680px; }
   .hero h1 img { width: 460px; }
 
+    
+  .rejilla { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  
+  .obra__capa {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--azul-capa);
+    color: var(--blanco);
+    text-align: center;
+    opacity: 0;
+    transition: opacity var(--transicion);
+  }
+  .obra__capa b { font-family: var(--fuente-titulos); font-size: 22px; }
+  .obra__capa span { font-family: var(--fuente-detalles); font-size: 13px; }
+  .obra__ampliar {
+    margin-top: 8px;
+    padding: 12px 20px;
+    background: var(--blanco);
+    color: var(--negro);
+    font-weight: 600;
+  }
+  .obra__foto:hover .obra__capa,
+  .obra__foto:focus-visible .obra__capa { opacity: 1; }
+  .obra__foto:hover img,
+  .obra__foto:focus-visible img { filter: blur(4px); transform: scale(1.06); }
+  .galeria-inicio .obra figcaption { display: none; }
+
 }
 
 /* Escritorio */
