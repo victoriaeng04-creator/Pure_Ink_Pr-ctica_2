@@ -82,7 +82,7 @@ $(function () {
 
       
       const $ocultas = $obras.filter(':hidden');
-      $obras.removeClass('obra--extra').closest('.rejilla').addClass('cargada');
+      $obras.removeClass('obra--extra');
       $ocultas.hide();
       $(window).off('scroll.galeria');
 

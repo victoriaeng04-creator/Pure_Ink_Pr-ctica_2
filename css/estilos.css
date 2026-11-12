@@ -370,7 +370,7 @@ p { margin: 0; }
 .galeria-inicio h2 { margin-bottom: var(--e-3); }
 .galeria-inicio .filtros { justify-content: flex-start; }
 .galeria-inicio .rejilla { text-align: left; }
-.galeria-inicio__mas { margin-top: var(--e-5); width: 100%; }
+.galeria-inicio__mas { margin-top: var(--e-5); }
 
 
 .obra { margin: 0; display: flex; flex-direction: column; gap: var(--e-1); }
@@ -400,8 +400,6 @@ p { margin: 0; }
   color: var(--gris-texto);
 }
 .obra--extra { display: none; } 
-/* Inicio: galería de móvil */
-.galeria-inicio .rejilla:not(.cargada) .obra:nth-child(n+5) { display: none; }
 
 /* 7. Breakpoints */
 
@@ -429,7 +427,7 @@ p { margin: 0; }
   .estudio__textos { grid-template-columns: repeat(2, minmax(0, 1fr)); text-align: left; }
   .estudio__segundo { display: block; }
 
-  .rejilla { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .rejilla { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .galeria-inicio .filtros { justify-content: center; }
   .galeria-inicio__mas { width: auto; }
   .galeria-inicio .rejilla:not(.cargada) .obra:nth-child(n+5) { display: flex; } 
@@ -476,8 +474,6 @@ p { margin: 0; }
   .hero { min-height: 680px; }
   .hero h1 img { width: 460px; }
 
-    
-  .rejilla { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
   
   .obra__capa {
