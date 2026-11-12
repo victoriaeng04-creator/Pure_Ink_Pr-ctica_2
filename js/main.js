@@ -1,11 +1,14 @@
 $(function () {
 
   /* AOS: animaciones al hacer scroll */
-  AOS.init({
-    duration: 600,
-    once: true,      // cada elemento se anima solo la primera vez
-    offset: 80
-  });
+
+    if (window.AOS) {
+    AOS.init({
+      duration: 600,
+      once: true,     
+      offset: 80
+    });
+  }
   
 
   /* Menú responsive (rama: header-menu)*/

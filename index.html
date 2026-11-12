@@ -46,6 +46,21 @@
   <main id="top">
     <!-- Hero con vídeo de fondo + Typed.js (rama: inicio-hero) -->
     <section class="hero seccion-oscura" aria-label="Presentación">
+
+       <video class="hero__video" autoplay muted loop playsinline poster="media/img/hero-poster.webp" aria-hidden="true">
+        <source src="media/video/hero.mp4" type="video/mp4"> 
+      </video>
+
+      <div class="hero__contenido contenedor">
+        <p class="etiqueta hero__aparece">Estudio de tatuaje | Malasaña, Madrid</p>
+        <h1 class="hero__aparece"><img src="media/img/logo-pureink.png" alt="Pure Ink" width="827" height="449"></h1>
+        <p class="hero__frase hero__aparece">Tatuamos <span id="typed">fine line</span></p>
+        <div class="hero__botones hero__aparece">
+          <a href="cita.html" class="btn btn--relleno">Pide cita</a>
+          <a href="galeria.html" class="btn">Ver galería</a>
+        </div>
+      </div>
+      
     </section>
 
     <!-- Estudio: titular + dos bloques de texto (rama: inicio-estudio) -->
