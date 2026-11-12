@@ -310,6 +310,8 @@ p { margin: 0; }
   .cabecera__cita { display: inline-flex; height: 44px; padding: 0 18px; margin-left: auto; }
   .menu-boton { order: 2; }
 
+    /* Pie tablet: 2 columnas */
+  .pie__columnas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* Portátil */
@@ -346,6 +348,9 @@ p { margin: 0; }
   .menu a[aria-current="page"] { color: var(--azul); }
   .menu .menu__cita { display: none; }
   .cabecera__cita { margin-left: 0; height: var(--alto-boton); padding: var(--padding-boton); }
+
+   /* Pie escritorio: 4 columnas */
+  .pie__columnas { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
 }
 
