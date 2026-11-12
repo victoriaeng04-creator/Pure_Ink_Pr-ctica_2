@@ -6,10 +6,41 @@ $(function () {
     once: true,      // cada elemento se anima solo la primera vez
     offset: 80
   });
+  
 
-  /* Menú responsive (rama: header-menu) 
-     Clic en la hamburguesa → slideToggle del menú,
-     el icono cambia a × y se actualiza aria-expanded. */
+  /* Menú responsive (rama: header-menu)*/
+    const $botonMenu = $('.menu-boton');
+  const $menu = $('.menu');
+
+  function cerrarMenu() {
+    $botonMenu.removeClass('abierto').attr({ 'aria-expanded': 'false', 'aria-label': 'Abrir menú' });
+    $menu.stop(true, true).slideUp(300);
+  }
+
+  // Clic en la hamburguesa: abre o cierra el menú
+  $botonMenu.on('click', function () {
+    const abierto = $(this).toggleClass('abierto').hasClass('abierto');
+    $(this).attr({ 'aria-expanded': String(abierto), 'aria-label': abierto ? 'Cerrar menú' : 'Abrir menú' });
+    $menu.stop(true, true).slideToggle(300);
+  });
+
+  // Al pulsar un enlace del menú en móvil, se cierra
+  $menu.on('click', 'a', function () {
+    if ($botonMenu.is(':visible')) { cerrarMenu(); }
+  });
+
+  // La tecla Esc cierra el menú
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape' && $botonMenu.hasClass('abierto')) { cerrarMenu(); }
+  });
+
+  // Al agrandar la ventana a escritorio, se limpia el estilo que deja slideToggle
+  $(window).on('resize', function () {
+    if (window.innerWidth >= 1024) {
+      $menu.removeAttr('style');
+      $botonMenu.removeClass('abierto').attr({ 'aria-expanded': 'false', 'aria-label': 'Abrir menú' });
+    }
+  });
 
 
   /* Hero (rama: inicio-hero) 
