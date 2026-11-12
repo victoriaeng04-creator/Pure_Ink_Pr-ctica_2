@@ -260,12 +260,37 @@ p { margin: 0; }
 .cabecera__cita { display: none; }
 
 
+
 /*  6. Pie de página (rama: footer)  */
 .pie {
   background: var(--negro-fondo);
   color: var(--blanco-roto);
   padding-block: var(--e-8) 0;
 }
+/*  Pie de página: base móvil  */
+.pie__columnas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--e-4);
+  padding-bottom: var(--e-7);
+  font-size: 15px;
+}
+.pie__logo { width: auto; height: 58px; margin-bottom: var(--e-2); }
+.pie address { font-style: normal; }
+.pie .etiqueta { color: var(--gris-claro); margin-bottom: 12px; }
+.pie a:hover { color: var(--azul-claro); }
+.pie__legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-2) var(--e-3);
+  padding-block: var(--e-3);
+  border-top: 1px solid var(--linea-oscura);
+  font-size: 12px;
+  color: var(--gris-claro);
+}
+.pie__legal span { margin-right: auto; }
+
 
 
 
