@@ -1,22 +1,70 @@
 $(function () {
 
   /* AOS: animaciones al hacer scroll */
-  AOS.init({
-    duration: 600,
-    once: true,      // cada elemento se anima solo la primera vez
-    offset: 80
+
+    if (window.AOS) {
+    AOS.init({
+      duration: 600,
+      once: true,     
+      offset: 80
+    });
+  }
+  
+
+  /* Menú responsive (rama: header-menu)*/
+    const $botonMenu = $('.menu-boton');
+  const $menu = $('.menu');
+
+  function cerrarMenu() {
+    $botonMenu.removeClass('abierto').attr({ 'aria-expanded': 'false', 'aria-label': 'Abrir menú' });
+    $menu.stop(true, true).slideUp(300);
+  }
+
+  // Clic en la hamburguesa: abre o cierra el menú
+  $botonMenu.on('click', function () {
+    const abierto = $(this).toggleClass('abierto').hasClass('abierto');
+    $(this).attr({ 'aria-expanded': String(abierto), 'aria-label': abierto ? 'Cerrar menú' : 'Abrir menú' });
+    $menu.stop(true, true).slideToggle(300);
   });
 
-  /* Menú responsive (rama: header-menu) 
-     Clic en la hamburguesa → slideToggle del menú,
-     el icono cambia a × y se actualiza aria-expanded. */
+  // Al pulsar un enlace del menú en móvil, se cierra
+  $menu.on('click', 'a', function () {
+    if ($botonMenu.is(':visible')) { cerrarMenu(); }
+  });
+
+  // La tecla Esc cierra el menú
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape' && $botonMenu.hasClass('abierto')) { cerrarMenu(); }
+  });
+
+  // Al agrandar la ventana a escritorio, se limpia el estilo que deja slideToggle
+  $(window).on('resize', function () {
+    if (window.innerWidth >= 1024) {
+      $menu.removeAttr('style');
+      $botonMenu.removeClass('abierto').attr({ 'aria-expanded': 'false', 'aria-label': 'Abrir menú' });
+    }
+  });
 
 
   /* Hero (rama: inicio-hero) 
-     1) fadeIn escalonado: etiqueta - logo - frase Typed - botones
-     2) Typed.js: fine line - blackwork - ornamental - lettering (loop)
-  if (typeof Typed !== 'undefined' && $('#typed').length) {
-    // new Typed('#typed', { ... });
+    fadeIn escalonado + typed.js */
+  const $aparecen = $('.hero__aparece');
+  if ($aparecen.length) {
+    $aparecen.css('opacity', 0).each(function (i) {
+      $(this).delay(300 * i).animate({ opacity: 1 }, 600);
+    });
+
+    if (window.Typed) {
+      $('#typed').text('');
+      new Typed('#typed', {
+        strings: ['fine line', 'blackwork', 'ornamental', 'lettering'],
+        typeSpeed: 70,
+        backSpeed: 40,
+        backDelay: 1600,
+        startDelay: 900,   // empieza cuando la frase ya ha aparecido
+        loop: true
+      });
+    }
   }
 
 

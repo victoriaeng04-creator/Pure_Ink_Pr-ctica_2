@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pure Ink · Estudio de tatuaje en Malasaña, Madrid</title>
   <meta name="description" content="Estudio de tatuaje en Malasaña (Madrid): fine line, blackwork, ornamental y lettering. Pide cita previa.">
-
+  <link rel="icon" href="media/img/favicon.png" type="image/png">
   <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,15 +36,31 @@
           <li><a href="galeria.html">Galería</a></li>
           <li><a href="cita.html">Cita previa</a></li>
         </ul>
+         <a href="cita.html" class="btn btn--relleno menu__cita">Pide cita</a>
       </nav>
 
-      <a href="cita.html" class="btn btn--relleno">Pide cita</a>
+      <a href="cita.html" class="btn btn--relleno cabecera__cita">Pide cita</a>
     </div>
   </header>
 
   <main id="top">
     <!-- Hero con vídeo de fondo + Typed.js (rama: inicio-hero) -->
     <section class="hero seccion-oscura" aria-label="Presentación">
+
+       <video class="hero__video" autoplay muted loop playsinline poster="media/img/hero-poster.webp" aria-hidden="true">
+        <source src="media/video/hero.mp4" type="video/mp4"> 
+      </video>
+
+      <div class="hero__contenido contenedor">
+        <p class="etiqueta hero__aparece">Estudio de tatuaje | Malasaña, Madrid</p>
+        <h1 class="hero__aparece"><img src="media/img/logo-pureink.png" alt="Pure Ink" width="827" height="449"></h1>
+        <p class="hero__frase hero__aparece">Tatuamos <span id="typed">fine line</span></p>
+        <div class="hero__botones hero__aparece">
+          <a href="cita.html" class="btn btn--relleno">Pide cita</a>
+          <a href="galeria.html" class="btn">Ver galería</a>
+        </div>
+      </div>
+      
     </section>
 
     <!-- Estudio: titular + dos bloques de texto (rama: inicio-estudio) -->
