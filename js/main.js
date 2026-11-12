@@ -68,10 +68,35 @@ $(function () {
   }
 
 
-  /* Galería de inicio (rama: inicio-galeria)
-     Filtro por estilo (data-estilo + fadeOut/fadeIn)
-     y carga de 2 filas más al llegar al final al hacer scroll. */
+  /* Galería de inicio */
+  $('.filtros').each(function () {
+    const $filtros = $(this);
+    const $obras = $filtros.closest('section').find('.obra');
+    const $contador = $('.galeria__contador'); //Galeria
 
+    $filtros.on('click', '.filtro', function () {
+      const filtro = $(this).data('filtro');
+
+      $filtros.find('.filtro').removeClass('activo').attr('aria-pressed', 'false');
+      $(this).addClass('activo').attr('aria-pressed', 'true');
+
+      
+      const $ocultas = $obras.filter(':hidden');
+      $obras.removeClass('obra--extra');
+      $ocultas.hide();
+      $(window).off('scroll.galeria');
+
+      const $mostrar = filtro === 'todo' ? $obras : $obras.filter('[data-estilo="' + filtro + '"]');
+      $obras.not($mostrar).stop(true, true).fadeOut(200);
+      $mostrar.stop(true, true).delay(200).fadeIn(300);
+
+      if ($contador.length) {
+        $contador.text(filtro === 'todo'
+          ? 'Mostrando ' + $obras.length + ' trabajos'
+          : 'Mostrando ' + $mostrar.length + ' de ' + $obras.length + ' trabajos');
+      }
+    });
+  });
 
   /* Slider automático (rama: slider)
      setInterval cada 4 s + .eq() + fadeOut/fadeIn,

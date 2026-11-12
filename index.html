@@ -63,12 +63,121 @@
       
     </section>
 
-    <!-- Estudio: titular + dos bloques de texto (rama: inicio-estudio) -->
+    <!-- Estudio -->
     <section class="estudio" id="estudio">
+      <div class="contenedor">
+        <h2 data-aos="fade-up">¡Diseños hechos <span class="azul">para ti!</span><br>Encuéntranos en Malasaña.</h2>
+        <div class="estudio__textos">
+          <p class="texto-fino" data-aos="fade-up" data-aos-delay="300">En Pure Ink cada tatuaje empieza con una conversación. Escuchamos tu idea, la dibujamos contigo y la adaptamos a tu piel hasta que sea solo tuya.</p>
+          <p class="texto-fino estudio__segundo" data-aos="fade-up" data-aos-delay="450">Trabajamos en un estudio pequeño y tranquilo, con material de un solo uso y siempre con cita previa, para que cada sesión sea cómoda y sin prisas.</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Galería con filtros, hover y carga al hacer scroll (rama: inicio-galeria) -->
+    <!-- Galería con filtros, hover y carga al hacer scroll -->
     <section class="galeria-inicio" aria-labelledby="titulo-galeria">
+      <div class="contenedor">
+        <h2 id="titulo-galeria" class="titulo-seccion" data-aos="fade-up">Galería</h2>
+        <div class="filtros" role="group" aria-label="Filtrar por estilo">
+          <button type="button" class="filtro activo" data-filtro="todo" aria-pressed="true">Todo</button>
+          <button type="button" class="filtro" data-filtro="fineline" aria-pressed="false">Fine line</button>
+          <button type="button" class="filtro" data-filtro="blackwork" aria-pressed="false">Blackwork</button>
+          <button type="button" class="filtro" data-filtro="ornamental" aria-pressed="false">Ornamental</button>
+          <button type="button" class="filtro" data-filtro="lettering" aria-pressed="false">Lettering</button>
+        </div>
+        <div class="rejilla">
+
+          <figure class="obra" data-estilo="ornamental" data-artista="Inés Calvo" data-zona="Hombro" data-aos="fade-up" data-aos-delay="0">
+            <div class="obra__foto">
+              <img src="media/img/galeria/ornamental-01.webp" alt="Tatuaje ornamental en hombro, de Inés Calvo" width="1272" height="1236" loading="lazy">
+              <span class="obra__capa">
+                <b>Ornamental</b>
+                <span>Inés Calvo</span>
+              </span>
+            </div>
+            <figcaption>Ornamental | Inés Calvo</figcaption>
+          </figure>
+
+          <figure class="obra" data-estilo="blackwork" data-artista="Dani Ortega" data-zona="Espalda completa" data-aos="fade-up" data-aos-delay="100">
+            <div class="obra__foto">
+              <img src="media/img/galeria/blackwork-01.webp" alt="Tatuaje blackwork en espalda completa, de Dani Ortega" width="1143" height="1600" loading="lazy">
+              <span class="obra__capa">
+                <b>Blackwork</b>
+                <span>Dani Ortega</span>
+              </span>
+            </div>
+            <figcaption>Blackwork | Dani Ortega</figcaption>
+          </figure>
+
+          <figure class="obra" data-estilo="fineline" data-artista="Lucía Ferrer" data-zona="Antebrazo" data-aos="fade-up" data-aos-delay="200">
+            <div class="obra__foto">
+              <img src="media/img/galeria/fineline-02.webp" alt="Tatuaje fine line en antebrazo, de Lucía Ferrer" width="1068" height="1600" loading="lazy">
+              <span class="obra__capa">
+                <b>Fine line</b>
+                <span>Lucía Ferrer</span>
+              </span>
+            </div>
+            <figcaption>Fine line | Lucía Ferrer</figcaption>
+          </figure>
+
+          <figure class="obra" data-estilo="lettering" data-artista="Marco Sanz" data-zona="Antebrazo" data-aos="fade-up" data-aos-delay="300">
+            <div class="obra__foto">
+              <img src="media/img/galeria/lettering-01.webp" alt="Tatuaje lettering en antebrazo, de Marco Sanz" width="1211" height="1299" loading="lazy">
+              <span class="obra__capa">
+                <b>Lettering</b>
+                <span>Marco Sanz</span>
+              </span>
+            </div>
+            <figcaption>Lettering | Marco Sanz</figcaption>
+          </figure>
+
+          <figure class="obra" data-estilo="fineline" data-artista="Lucía Ferrer" data-zona="Clavícula" data-aos="fade-up" data-aos-delay="0">
+            <div class="obra__foto">
+              <img src="media/img/galeria/fineline-03.webp" alt="Tatuaje fine line en clavícula, de Lucía Ferrer" width="906" height="1600" loading="lazy">
+              <span class="obra__capa">
+                <b>Fine line</b>
+                <span>Lucía Ferrer</span>
+              </span>
+            </div>
+            <figcaption>Fine line | Lucía Ferrer</figcaption>
+          </figure>
+
+          <figure class="obra" data-estilo="ornamental" data-artista="Inés Calvo" data-zona="Costado" data-aos="fade-up" data-aos-delay="100">
+            <div class="obra__foto">
+              <img src="media/img/galeria/ornamental-02.webp" alt="Tatuaje ornamental en costado, de Inés Calvo" width="1019" height="1543" loading="lazy">
+              <span class="obra__capa">
+                <b>Ornamental</b>
+                <span>Inés Calvo</span>
+              </span>
+            </div>
+            <figcaption>Ornamental | Inés Calvo</figcaption>
+          </figure>
+
+          <figure class="obra" data-estilo="lettering" data-artista="Marco Sanz" data-zona="Antebrazo" data-aos="fade-up" data-aos-delay="200">
+            <div class="obra__foto">
+              <img src="media/img/galeria/lettering-02.webp" alt="Tatuaje lettering en antebrazo, de Marco Sanz" width="1122" height="1402" loading="lazy">
+              <span class="obra__capa">
+                <b>Lettering</b>
+                <span>Marco Sanz</span>
+              </span>
+            </div>
+            <figcaption>Lettering | Marco Sanz</figcaption>
+          </figure>
+
+          <figure class="obra" data-estilo="blackwork" data-artista="Dani Ortega" data-zona="Espalda alta" data-aos="fade-up" data-aos-delay="300">
+            <div class="obra__foto">
+              <img src="media/img/galeria/blackwork-03.webp" alt="Tatuaje blackwork en espalda alta, de Dani Ortega" width="1067" height="1600" loading="lazy">
+              <span class="obra__capa">
+                <b>Blackwork</b>
+                <span>Dani Ortega</span>
+              </span>
+            </div>
+            <figcaption>Blackwork | Dani Ortega</figcaption>
+          </figure>
+
+        </div>
+        <a href="galeria.html" class="btn btn--relleno galeria-inicio__mas">Ver galería completa →</a>
+      </div>
     </section>
 
     <!-- Piezas recientes: slider automático (rama: slider) -->
