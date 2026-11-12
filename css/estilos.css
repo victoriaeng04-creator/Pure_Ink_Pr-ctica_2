@@ -192,6 +192,72 @@ p { margin: 0; }
 
 .logo img { height: 46px; width: auto; }
 
+
+/* --- Cabecera: base móvil --- */
+.cabecera .contenedor { gap: var(--e-2); }
+
+.menu-boton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  background: transparent;
+  border: 0;
+}
+.menu-boton span {
+  display: block;
+  height: 2px;
+  background: var(--negro);
+  transition: transform var(--transicion), opacity var(--transicion);
+}
+/* La hamburguesa se convierte en × cuando el menú está abierto */
+.menu-boton.abierto span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-boton.abierto span:nth-child(2) { opacity: 0; }
+.menu-boton.abierto span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Panel del menú: oculto en móvil hasta que jQuery lo despliega */
+.menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: calc(100vh - var(--alto-header));
+  padding: var(--e-5) var(--margen);
+  background: var(--oscuro);
+  overflow-y: auto;
+}
+.menu ul { list-style: none; margin: 0; padding: 0; }
+.menu a {
+  display: block;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--linea-oscura);
+  color: var(--blanco-roto);
+  font-family: var(--fuente-titulos);
+  font-weight: var(--peso-titulo);
+  font-size: 40px;
+  line-height: 1;
+}
+.menu a[aria-current="page"] { color: var(--azul-claro); }
+.menu .menu__cita {
+  display: flex;
+  width: 100%;
+  margin-top: var(--e-5);
+  padding: var(--padding-boton);
+  border-bottom: 0;
+  font-family: var(--fuente-detalles);
+  font-size: var(--t-boton);
+  font-weight: var(--peso-boton);
+  color: var(--blanco);
+}
+
+/* El «Pide cita» de la cabecera no se ve en móvil (va dentro del menú) */
+.cabecera__cita { display: none; }
+
+
 /*  6. Pie de página (rama: footer)  */
 .pie {
   background: var(--negro-fondo);
@@ -212,6 +278,11 @@ p { margin: 0; }
     --t-h2: 40px;
     --t-subtitulo: 24px;
   }
+
+  /* Cabecera tablet: aparece el «Pide cita» pequeño junto a la hamburguesa */
+  .cabecera__cita { display: inline-flex; height: 44px; padding: 0 18px; margin-left: auto; }
+  .menu-boton { order: 2; }
+
 }
 
 /* Portátil */
@@ -224,6 +295,31 @@ p { margin: 0; }
     --t-boton: 14px;
   }
   .logo img { height: 53px; }
+
+    /* Cabecera escritorio: menú horizontal, sin hamburguesa */
+  .menu-boton { display: none; }
+  .menu {
+    display: block;
+    position: static;
+    height: auto;
+    padding: 0;
+    background: none;
+    overflow: visible;
+  }
+  .menu ul { display: flex; gap: var(--e-5); }
+  .menu a {
+    padding: 0;
+    border: 0;
+    color: var(--negro);
+    font-family: var(--fuente-detalles);
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .menu a:hover,
+  .menu a[aria-current="page"] { color: var(--azul); }
+  .menu .menu__cita { display: none; }
+  .cabecera__cita { margin-left: 0; height: var(--alto-boton); padding: var(--padding-boton); }
+  
 }
 
 /* Escritorio */
