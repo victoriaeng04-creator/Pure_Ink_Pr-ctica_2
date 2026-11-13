@@ -465,6 +465,64 @@ p { margin: 0; }
 .cta h2 { margin-bottom: var(--e-4); }
 .cta__botones { display: flex; flex-direction: column; gap: 12px; }
 
+
+/* 13. Cabecera de páginas */
+.cabecera-pagina {
+  height: 160px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: var(--e-3);
+}
+.cabecera-pagina .contenedor { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--e-2); }
+.cabecera-pagina h1 { text-transform: uppercase; line-height: .9; }
+.cabecera-pagina--halo {
+  background-color: #0d0d0d;
+  background-image: radial-gradient(ellipse 130% 170% at 50% 130%, rgba(21, 48, 255, .85) 0%, rgba(21, 48, 255, .45) 40%, rgba(21, 48, 255, 0) 85%);
+}
+.cabecera-pagina--halo-suave {
+  background-color: var(--blanco);
+  background-image: radial-gradient(ellipse 130% 170% at 50% 130%, rgba(21, 48, 255, .35) 0%, rgba(21, 48, 255, .14) 40%, rgba(21, 48, 255, 0) 85%);
+}
+
+
+.pestanas { border-bottom: 1px solid var(--negro); overflow-x: auto; }
+.pestanas .contenedor { display: flex; }
+.pestana {
+  flex: none;
+  height: 52px;
+  padding: 0 16px;
+  border: 0;
+  background: transparent;
+  font-family: var(--fuente-detalles);
+  font-size: 15px;
+  font-weight: 600;
+}
+.pestana.activa { background: var(--negro); color: var(--blanco); }
+.panel { padding-block: var(--e-5) var(--e-7); }
+.panel__ficha { display: grid; gap: var(--e-4); }
+.panel__retrato { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.panel__texto { display: flex; flex-direction: column; align-items: flex-start; gap: var(--e-3); }
+.etiquetas-estilo { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.etiquetas-estilo li {
+  padding: 7px 14px;
+  border: 1px solid var(--negro);
+  border-radius: var(--radio-pastilla);
+  font-family: var(--fuente-detalles);
+  font-size: 13px;
+}
+.panel__texto .btn { width: 100%; }
+.panel__obras {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gutter);
+  margin-top: var(--e-5);
+}
+.panel__obras img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+
+.cta--oscura { background: var(--negro); border-top: 0; color: var(--blanco); }
+.cta--oscura .btn { width: 100%; }
+
+
 /* 7. Breakpoints */
 
 /* Tablet */
@@ -501,6 +559,14 @@ p { margin: 0; }
 
   .equipo__boton .btn { width: auto; }
   .cta__botones { flex-direction: row; justify-content: center; }
+
+  
+  .cabecera-pagina { height: 200px; }
+
+  .panel__ficha { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+  .panel__texto .btn { width: auto; }
+  .panel__obras { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .cta--oscura .btn { width: auto; }
 
 }
 
@@ -579,6 +645,14 @@ p { margin: 0; }
 
   .equipo__rejilla { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .equipo h2 { text-align: left; }
+  
+
+  .cabecera-pagina { height: 240px; }
+
+  .panel__ficha { grid-template-columns: 5fr 1fr 6fr; }
+  .panel__texto { grid-column: 3; }
+  .cta--oscura .contenedor { display: flex; justify-content: space-between; align-items: center; text-align: left; }
+  .cta--oscura h2 { margin-bottom: 0; }
 
 }
 
