@@ -401,6 +401,43 @@ p { margin: 0; }
 }
 .obra--extra { display: none; } 
 
+/* 11. Piezas recientes */
+.recientes { padding-block: var(--e-7); }
+.recientes h2 { margin-bottom: var(--e-3); }
+
+.slider {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.6), transparent 70%),
+    var(--azul);
+}
+.slide { position: absolute; inset: 0; margin: 0; padding: var(--e-2); display: none; }
+.slide.activo { display: block; }
+.slide img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.slide figcaption {
+  position: absolute;
+  left: var(--e-2);
+  bottom: var(--e-2);
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, .6);
+  color: var(--blanco-roto);
+}
+.slider__puntos { display: flex; justify-content: center; gap: 10px; margin-top: var(--e-3); }
+.slider__punto {
+  width: 28px;
+  height: 20px;
+  padding: 8px 0;
+  border: 0;
+  background: #555 content-box;
+}
+.slider__punto.activo { background-color: var(--blanco-roto); }
+
+
 /* 7. Breakpoints */
 
 /* Tablet */
@@ -431,6 +468,9 @@ p { margin: 0; }
   .galeria-inicio .filtros { justify-content: center; }
   .galeria-inicio__mas { width: auto; }
   .galeria-inicio .rejilla:not(.cargada) .obra:nth-child(n+5) { display: flex; } 
+
+  .slider { height: 380px; }
+  .slide { padding: var(--e-3); }
 
 }
 
@@ -504,6 +544,8 @@ p { margin: 0; }
   .obra__foto:hover img,
   .obra__foto:focus-visible img { filter: blur(4px); transform: scale(1.06); }
   .galeria-inicio .obra figcaption { display: none; }
+
+  .slider { height: 470px; }
 
 }
 

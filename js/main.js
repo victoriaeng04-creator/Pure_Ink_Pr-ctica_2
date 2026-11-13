@@ -98,10 +98,40 @@ $(function () {
     });
   });
 
-  /* Slider automático (rama: slider)
-     setInterval cada 4 s + .eq() + fadeOut/fadeIn,
-     puntos pulsables y pausa al pasar el cursor. */
+  /* Slider automático */
+  const $slider = $('.slider');
+  if ($slider.length) {
+    const $slides = $slider.find('.slide');
+    const $puntos = $('.slider__punto');
+    let actual = 0;
+    let temporizador;
 
+    function irA(n) {
+      if (n === actual) { return; }
+      $slides.eq(actual).stop(true, true).fadeOut(500).removeClass('activo');
+      $slides.eq(n).stop(true, true).fadeIn(500).addClass('activo');
+      $puntos.removeClass('activo').removeAttr('aria-current');
+      $puntos.eq(n).addClass('activo').attr('aria-current', 'true');
+      actual = n;
+    }
+
+    function arrancar() {
+      clearInterval(temporizador);
+      temporizador = setInterval(function () {
+        irA((actual + 1) % $slides.length);
+      }, 4000);
+    }
+
+    $puntos.on('click', function () {
+      irA($puntos.index(this));
+      arrancar();
+    });
+
+    $slider.on('mouseenter', function () { clearInterval(temporizador); });
+    $slider.on('mouseleave', arrancar);
+
+    arrancar();
+  }
 
   /* Pestañas de artistas (rama: artistas)
      Clic en pestaña → addClass('activa') + fadeIn del panel. */
