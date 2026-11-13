@@ -137,10 +137,86 @@ $(function () {
      Clic en pestaña → addClass('activa') + fadeIn del panel. */
 
 
-  /* Galería + modal (rama: galeria)
-     Clic en foto → modal (fadeIn); se cierra con ×, fondo o Esc;
-     flechas para foto anterior/siguiente. */
+  /* Galería + modal */
 
+  const $extras = $('.galeria .obra--extra');
+  if ($extras.length) {
+    const $rejilla = $('.galeria .rejilla');
+
+    $(window).on('scroll.galeria', function () {
+      const finRejilla = $rejilla.offset().top + $rejilla.outerHeight();
+      const finVentana = $(window).scrollTop() + $(window).height();
+      if (finVentana > finRejilla - 40) {
+        $(window).off('scroll.galeria');   // solo una vez
+        $extras.removeClass('obra--extra').hide().each(function (i) {
+          $(this).delay(120 * i).fadeIn(500);
+        });
+        if (window.AOS) { AOS.refresh(); }
+      }
+    });
+  }
+
+const $modal = $('.modal');
+  if ($modal.length) {
+    const $todas = $('.galeria .obra');
+    let indice = 0;
+    let $origen = null;
+
+    function pintar(i) {
+      const $visibles = $todas.filter(':visible');
+      indice = (i + $visibles.length) % $visibles.length;
+      const $obra = $visibles.eq(indice);
+      const $img = $obra.find('img');
+      $modal.find('.modal__foto img').attr({ src: $img.attr('src'), alt: $img.attr('alt') });
+      $modal.find('#modal-titulo').text($obra.find('.obra__capa b').text() + ' en ' + $obra.data('zona').toLowerCase());
+      $modal.find('.modal__estilo').text($obra.find('.obra__capa b').text());
+      $modal.find('.modal__artista').text($obra.data('artista'));
+      $modal.find('.modal__zona').text($obra.data('zona'));
+    }
+
+    function abrirModal($obra) {
+      $origen = $obra.find('.obra__foto');
+      pintar($todas.filter(':visible').index($obra));
+      $('body').addClass('modal-abierto');
+      $modal.removeAttr('hidden').hide().fadeIn(300);
+      $modal.find('.modal__cerrar').trigger('focus');
+    }
+
+    function cerrarModal() {
+      $modal.fadeOut(200, function () {
+        $modal.attr('hidden', true);
+        $('body').removeClass('modal-abierto');
+        if ($origen) { $origen.trigger('focus'); }
+      });
+    }
+
+    $todas.on('click', '.obra__foto', function () { abrirModal($(this).closest('.obra')); });
+    $modal.on('click', '.modal__cerrar', cerrarModal);
+    $modal.on('click', '.modal__flecha--ant', function () { pintar(indice - 1); });
+    $modal.on('click', '.modal__flecha--sig', function () { pintar(indice + 1); });
+
+    
+    $modal.on('click', function (e) {
+      if (e.target === this || $(e.target).is('.modal__caja')) { cerrarModal(); }
+    });
+
+    $(document).on('keydown', function (e) {
+      if ($modal.is(':hidden')) { return; }
+      if (e.key === 'Escape') { cerrarModal(); }
+      if (e.key === 'ArrowLeft') { pintar(indice - 1); }
+      if (e.key === 'ArrowRight') { pintar(indice + 1); }
+    });
+
+    
+    let inicioX = null;
+    $modal.on('touchstart', '.modal__foto', function (e) { inicioX = e.originalEvent.touches[0].clientX; });
+    $modal.on('touchend', '.modal__foto', function (e) {
+      if (inicioX === null) { return; }
+      const distancia = e.originalEvent.changedTouches[0].clientX - inicioX;
+      if (Math.abs(distancia) > 50) { pintar(distancia < 0 ? indice + 1 : indice - 1); }
+      inicioX = null;
+    });
+  }
 
   /* Formulario de cita (rama: cita)
      Validación al enviar: campos obligatorios, email y teléfono,

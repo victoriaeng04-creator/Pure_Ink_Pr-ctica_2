@@ -48,15 +48,250 @@
     <section class="cabecera-pagina">
       <div class="contenedor">
         <h1>Galería</h1>
+        <p class="etiqueta galeria__contador" aria-live="polite">Mostrando 16 trabajos</p>
       </div>
     </section>
 
-    <!-- Filtros + rejilla + modal (rama: galeria) -->
+    <!-- Filtros + rejilla + modal -->
     <section class="galeria seccion-oscura" aria-label="Trabajos">
+       <div class="contenedor">
+        <h2 id="titulo-trabajos" class="solo-lector">Trabajos</h2>
+
+        <div class="filtros" role="group" aria-label="Filtrar por estilo">
+          <button type="button" class="filtro activo" data-filtro="todo" aria-pressed="true">Todo</button>
+          <button type="button" class="filtro" data-filtro="fineline" aria-pressed="false">Fine line</button>
+          <button type="button" class="filtro" data-filtro="blackwork" aria-pressed="false">Blackwork</button>
+          <button type="button" class="filtro" data-filtro="ornamental" aria-pressed="false">Ornamental</button>
+          <button type="button" class="filtro" data-filtro="lettering" aria-pressed="false">Lettering</button>
+        </div>
+
+        <div class="rejilla">
+
+          <figure class="obra" data-estilo="ornamental" data-artista="Inés Calvo" data-zona="Hombro" data-aos="fade-up" data-aos-delay="0">
+            <button type="button" class="obra__foto" aria-label="Ver ampliada: Tatuaje ornamental en hombro, de Inés Calvo">
+              <img src="media/img/galeria/ornamental-01.webp" alt="Tatuaje ornamental en hombro, de Inés Calvo" width="1272" height="1236" loading="lazy">
+              <span class="obra__capa">
+                <b>Ornamental</b>
+                <span>Inés Calvo</span>
+              <span class="obra__ampliar">Ver ampliada</span>
+              </span>
+            </button>
+            <figcaption>Ornamental | Inés Calvo</figcaption>
+          </figure>
+
+          <figure class="obra" data-estilo="blackwork" data-artista="Dani Ortega" data-zona="Espalda completa" data-aos="fade-up" data-aos-delay="100">
+            <button type="button" class="obra__foto" aria-label="Ver ampliada: Tatuaje blackwork en espalda completa, de Dani Ortega">
+              <img src="media/img/galeria/blackwork-01.webp" alt="Tatuaje blackwork en espalda completa, de Dani Ortega" width="1143" height="1600" loading="lazy">
+              <span class="obra__capa">
+                <b>Blackwork</b>
+                <span>Dani Ortega</span>
+              <span class="obra__ampliar">Ver ampliada</span>
+              </span>
+            </button>
+            <figcaption>Blackwork | Dani Ortega</figcaption>
+          </figure>
+
+          <figure class="obra" data-estilo="fineline" data-artista="Lucía Ferrer" data-zona="Antebrazo" data-aos="fade-up" data-aos-delay="200">
+            <button type="button" class="obra__foto" aria-label="Ver ampliada: Tatuaje fine line en antebrazo, de Lucía Ferrer">
+              <img src="media/img/galeria/fineline-02.webp" alt="Tatuaje fine line en antebrazo, de Lucía Ferrer" width="1068" height="1600" loading="lazy">
+              <span class="obra__capa">
+                <b>Fine line</b>
+                <span>Lucía Ferrer</span>
+              <span class="obra__ampliar">Ver ampliada</span>
+              </span>
+            </button>
+            <figcaption>Fine line | Lucía Ferrer</figcaption>
+          </figure>
+
+          <figure class="obra" data-estilo="lettering" data-artista="Marco Sanz" data-zona="Antebrazo" data-aos="fade-up" data-aos-delay="300">
+            <button type="button" class="obra__foto" aria-label="Ver ampliada: Tatuaje lettering en antebrazo, de Marco Sanz">
+              <img src="media/img/galeria/lettering-01.webp" alt="Tatuaje lettering en antebrazo, de Marco Sanz" width="1211" height="1299" loading="lazy">
+              <span class="obra__capa">
+                <b>Lettering</b>
+                <span>Marco Sanz</span>
+              <span class="obra__ampliar">Ver ampliada</span>
+              </span>
+            </button>
+            <figcaption>Lettering | Marco Sanz</figcaption>
+          </figure>
+
+          <figure class="obra" data-estilo="fineline" data-artista="Lucía Ferrer" data-zona="Clavícula" data-aos="fade-up" data-aos-delay="0">
+            <button type="button" class="obra__foto" aria-label="Ver ampliada: Tatuaje fine line en clavícula, de Lucía Ferrer">
+              <img src="media/img/galeria/fineline-03.webp" alt="Tatuaje fine line en clavícula, de Lucía Ferrer" width="906" height="1600" loading="lazy">
+              <span class="obra__capa">
+                <b>Fine line</b>
+                <span>Lucía Ferrer</span>
+              <span class="obra__ampliar">Ver ampliada</span>
+              </span>
+            </button>
+            <figcaption>Fine line | Lucía Ferrer</figcaption>
+          </figure>
+
+          <figure class="obra" data-estilo="ornamental" data-artista="Inés Calvo" data-zona="Costado" data-aos="fade-up" data-aos-delay="100">
+            <button type="button" class="obra__foto" aria-label="Ver ampliada: Tatuaje ornamental en costado, de Inés Calvo">
+              <img src="media/img/galeria/ornamental-02.webp" alt="Tatuaje ornamental en costado, de Inés Calvo" width="1019" height="1543" loading="lazy">
+              <span class="obra__capa">
+                <b>Ornamental</b>
+                <span>Inés Calvo</span>
+              <span class="obra__ampliar">Ver ampliada</span>
+              </span>
+            </button>
+            <figcaption>Ornamental | Inés Calvo</figcaption>
+          </figure>
+
+          <figure class="obra" data-estilo="lettering" data-artista="Marco Sanz" data-zona="Antebrazo" data-aos="fade-up" data-aos-delay="200">
+            <button type="button" class="obra__foto" aria-label="Ver ampliada: Tatuaje lettering en antebrazo, de Marco Sanz">
+              <img src="media/img/galeria/lettering-02.webp" alt="Tatuaje lettering en antebrazo, de Marco Sanz" width="1122" height="1402" loading="lazy">
+              <span class="obra__capa">
+                <b>Lettering</b>
+                <span>Marco Sanz</span>
+              <span class="obra__ampliar">Ver ampliada</span>
+              </span>
+            </button>
+            <figcaption>Lettering | Marco Sanz</figcaption>
+          </figure>
+
+          <figure class="obra" data-estilo="blackwork" data-artista="Dani Ortega" data-zona="Espalda alta" data-aos="fade-up" data-aos-delay="300">
+            <button type="button" class="obra__foto" aria-label="Ver ampliada: Tatuaje blackwork en espalda alta, de Dani Ortega">
+              <img src="media/img/galeria/blackwork-03.webp" alt="Tatuaje blackwork en espalda alta, de Dani Ortega" width="1067" height="1600" loading="lazy">
+              <span class="obra__capa">
+                <b>Blackwork</b>
+                <span>Dani Ortega</span>
+              <span class="obra__ampliar">Ver ampliada</span>
+              </span>
+            </button>
+            <figcaption>Blackwork | Dani Ortega</figcaption>
+          </figure>
+
+          <figure class="obra obra--extra" data-estilo="blackwork" data-artista="Dani Ortega" data-zona="Antebrazo">
+            <button type="button" class="obra__foto" aria-label="Ver ampliada: Tatuaje blackwork en antebrazo, de Dani Ortega">
+              <img src="media/img/galeria/blackwork-04.webp" alt="Tatuaje blackwork en antebrazo, de Dani Ortega" width="1067" height="1600" loading="lazy">
+              <span class="obra__capa">
+                <b>Blackwork</b>
+                <span>Dani Ortega</span>
+              <span class="obra__ampliar">Ver ampliada</span>
+              </span>
+            </button>
+            <figcaption>Blackwork | Dani Ortega</figcaption>
+          </figure>
+
+          <figure class="obra obra--extra" data-estilo="lettering" data-artista="Marco Sanz" data-zona="Costado">
+            <button type="button" class="obra__foto" aria-label="Ver ampliada: Tatuaje lettering en costado, de Marco Sanz">
+              <img src="media/img/galeria/lettering-03.webp" alt="Tatuaje lettering en costado, de Marco Sanz" width="1254" height="1254" loading="lazy">
+              <span class="obra__capa">
+                <b>Lettering</b>
+                <span>Marco Sanz</span>
+              <span class="obra__ampliar">Ver ampliada</span>
+              </span>
+            </button>
+            <figcaption>Lettering | Marco Sanz</figcaption>
+          </figure>
+
+          <figure class="obra obra--extra" data-estilo="fineline" data-artista="Lucía Ferrer" data-zona="Columna">
+            <button type="button" class="obra__foto" aria-label="Ver ampliada: Tatuaje fine line en columna, de Lucía Ferrer">
+              <img src="media/img/galeria/fineline-01.webp" alt="Tatuaje fine line en columna, de Lucía Ferrer" width="1280" height="1600" loading="lazy">
+              <span class="obra__capa">
+                <b>Fine line</b>
+                <span>Lucía Ferrer</span>
+              <span class="obra__ampliar">Ver ampliada</span>
+              </span>
+            </button>
+            <figcaption>Fine line | Lucía Ferrer</figcaption>
+          </figure>
+
+          <figure class="obra obra--extra" data-estilo="ornamental" data-artista="Inés Calvo" data-zona="Antebrazo">
+            <button type="button" class="obra__foto" aria-label="Ver ampliada: Tatuaje ornamental en antebrazo, de Inés Calvo">
+              <img src="media/img/galeria/ornamental-03.webp" alt="Tatuaje ornamental en antebrazo, de Inés Calvo" width="1200" height="1600" loading="lazy">
+              <span class="obra__capa">
+                <b>Ornamental</b>
+                <span>Inés Calvo</span>
+              <span class="obra__ampliar">Ver ampliada</span>
+              </span>
+            </button>
+            <figcaption>Ornamental | Inés Calvo</figcaption>
+          </figure>
+
+          <figure class="obra obra--extra" data-estilo="lettering" data-artista="Marco Sanz" data-zona="Hombro">
+            <button type="button" class="obra__foto" aria-label="Ver ampliada: Tatuaje lettering en hombro, de Marco Sanz">
+              <img src="media/img/galeria/lettering-04.webp" alt="Tatuaje lettering en hombro, de Marco Sanz" width="1088" height="1445" loading="lazy">
+              <span class="obra__capa">
+                <b>Lettering</b>
+                <span>Marco Sanz</span>
+              <span class="obra__ampliar">Ver ampliada</span>
+              </span>
+            </button>
+            <figcaption>Lettering | Marco Sanz</figcaption>
+          </figure>
+
+          <figure class="obra obra--extra" data-estilo="fineline" data-artista="Lucía Ferrer" data-zona="Antebrazo y muñeca">
+            <button type="button" class="obra__foto" aria-label="Ver ampliada: Tatuaje fine line en antebrazo y muñeca, de Lucía Ferrer">
+              <img src="media/img/galeria/fineline-04.webp" alt="Tatuaje fine line en antebrazo y muñeca, de Lucía Ferrer" width="1067" height="1600" loading="lazy">
+              <span class="obra__capa">
+                <b>Fine line</b>
+                <span>Lucía Ferrer</span>
+              <span class="obra__ampliar">Ver ampliada</span>
+              </span>
+            </button>
+            <figcaption>Fine line | Lucía Ferrer</figcaption>
+          </figure>
+
+          <figure class="obra obra--extra" data-estilo="ornamental" data-artista="Inés Calvo" data-zona="Hombro y brazo">
+            <button type="button" class="obra__foto" aria-label="Ver ampliada: Tatuaje ornamental en hombro y brazo, de Inés Calvo">
+              <img src="media/img/galeria/ornamental-04.webp" alt="Tatuaje ornamental en hombro y brazo, de Inés Calvo" width="900" height="1600" loading="lazy">
+              <span class="obra__capa">
+                <b>Ornamental</b>
+                <span>Inés Calvo</span>
+              <span class="obra__ampliar">Ver ampliada</span>
+              </span>
+            </button>
+            <figcaption>Ornamental | Inés Calvo</figcaption>
+          </figure>
+
+          <figure class="obra obra--extra" data-estilo="blackwork" data-artista="Dani Ortega" data-zona="Brazo completo">
+            <button type="button" class="obra__foto" aria-label="Ver ampliada: Tatuaje blackwork en brazo completo, de Dani Ortega">
+              <img src="media/img/galeria/blackwork-02.webp" alt="Tatuaje blackwork en brazo completo, de Dani Ortega" width="1600" height="1067" loading="lazy">
+              <span class="obra__capa">
+                <b>Blackwork</b>
+                <span>Dani Ortega</span>
+              <span class="obra__ampliar">Ver ampliada</span>
+              </span>
+            </button>
+            <figcaption>Blackwork | Dani Ortega</figcaption>
+          </figure>
+
+        </div>
+      </div>
     </section>
 
-    <!-- Modal de foto ampliada (rama: galeria) -->
+    <!-- Modal de foto ampliada -->
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" hidden>
+      
+      <button type="button" class="modal__cerrar" aria-label="Cerrar">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"></path></svg>
+      </button>
+
+      <div class="modal__caja contenedor">
+        <div class="modal__foto">
+          <img src="media/img/galeria/ornamental-01.webp" alt="">
+          <button type="button" class="modal__flecha modal__flecha--ant" aria-label="Foto anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+          </button>
+          <button type="button" class="modal__flecha modal__flecha--sig" aria-label="Foto siguiente">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>
+          </button>
+        </div>
+
+        <div class="modal__info">
+          <h2 id="modal-titulo" class="titulo-seccion"></h2>
+          <dl class="modal__datos">
+            <dt class="etiqueta">Estilo</dt><dd class="modal__estilo"></dd>
+            <dt class="etiqueta">Artista</dt><dd class="modal__artista"></dd>
+            <dt class="etiqueta">Zona</dt><dd class="modal__zona"></dd>
+          </dl>
+          <a href="cita.html" class="btn modal__boton">Quiero algo así</a>
+        </div>
+      </div>
+      
     </div>
   </main>
 
