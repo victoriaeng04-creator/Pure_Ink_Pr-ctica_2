@@ -654,6 +654,14 @@ p { margin: 0; }
   .cta--oscura .contenedor { display: flex; justify-content: space-between; align-items: center; text-align: left; }
   .cta--oscura h2 { margin-bottom: 0; }
 
+  .modal__caja { flex-direction: row; align-items: center; gap: var(--e-5); padding-block: var(--e-8); }
+  .modal__foto { flex: 7; }
+  .modal__foto img { height: 640px; max-height: 80vh; }
+  .modal__info { flex: 5; display: flex; }
+  .modal__info h2 { font-size: 40px; }
+  .modal__datos { width: 100%; }
+  .modal__boton { align-self: flex-start; }
+
 }
 
 /* Escritorio */
