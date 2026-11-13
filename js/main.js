@@ -138,6 +138,24 @@ $(function () {
 
 
   /* Galería + modal */
+
+  const $extras = $('.galeria .obra--extra');
+  if ($extras.length) {
+    const $rejilla = $('.galeria .rejilla');
+
+    $(window).on('scroll.galeria', function () {
+      const finRejilla = $rejilla.offset().top + $rejilla.outerHeight();
+      const finVentana = $(window).scrollTop() + $(window).height();
+      if (finVentana > finRejilla - 40) {
+        $(window).off('scroll.galeria');   // solo una vez
+        $extras.removeClass('obra--extra').hide().each(function (i) {
+          $(this).delay(120 * i).fadeIn(500);
+        });
+        if (window.AOS) { AOS.refresh(); }
+      }
+    });
+  }
+
 const $modal = $('.modal');
   if ($modal.length) {
     const $todas = $('.galeria .obra');
@@ -177,7 +195,7 @@ const $modal = $('.modal');
     $modal.on('click', '.modal__flecha--ant', function () { pintar(indice - 1); });
     $modal.on('click', '.modal__flecha--sig', function () { pintar(indice + 1); });
 
-    // Clic en el fondo azul (fuera de la foto y de los datos) también cierra
+    
     $modal.on('click', function (e) {
       if (e.target === this || $(e.target).is('.modal__caja')) { cerrarModal(); }
     });
@@ -189,7 +207,7 @@ const $modal = $('.modal');
       if (e.key === 'ArrowRight') { pintar(indice + 1); }
     });
 
-    // En móvil: deslizar el dedo a izquierda o derecha cambia de foto
+    
     let inicioX = null;
     $modal.on('touchstart', '.modal__foto', function (e) { inicioX = e.originalEvent.touches[0].clientX; });
     $modal.on('touchend', '.modal__foto', function (e) {
