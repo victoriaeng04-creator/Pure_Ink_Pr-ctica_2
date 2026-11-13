@@ -511,7 +511,7 @@ p { margin: 0; }
   .pie__columnas { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
   .hero { min-height: 680px; }
-  .hero h1 img { width:url 460px; }
+  .hero h1 img { width: 460px; }
 
 
   
