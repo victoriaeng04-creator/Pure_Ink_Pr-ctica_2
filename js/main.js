@@ -133,8 +133,21 @@ $(function () {
     arrancar();
   }
 
-  /* Pestañas de artistas (rama: artistas)
-     Clic en pestaña → addClass('activa') + fadeIn del panel. */
+  /* Pestañas de artistas */
+    const $pestanas = $('.pestana');
+  if ($pestanas.length) {
+    function abrirPestana($pestana) {
+      $pestanas.removeClass('activa').attr('aria-selected', 'false');
+      $pestana.addClass('activa').attr('aria-selected', 'true');
+      $('.panel').removeClass('activo').attr('hidden', true).hide();
+      $('#' + $pestana.attr('aria-controls')).removeAttr('hidden').addClass('activo').fadeIn(400);
+    }
+
+    $pestanas.on('click', function () { abrirPestana($(this)); });
+
+    const desdeEnlace = $('#tab-' + window.location.hash.slice(1));
+    if (window.location.hash && desdeEnlace.length) { abrirPestana(desdeEnlace); }
+  }
 
 
   /* Galería + modal (rama: galeria)
