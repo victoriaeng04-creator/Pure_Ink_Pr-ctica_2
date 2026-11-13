@@ -409,7 +409,8 @@ p { margin: 0; }
   position: relative;
   height: 300px;
   overflow: hidden;
-  background: var(--azul);
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.6), transparent 70%),
+    var(--azul);
 }
 .slide { position: absolute; inset: 0; margin: 0; padding: var(--e-2); display: none; }
 .slide.activo { display: block; }
