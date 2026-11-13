@@ -53,12 +53,117 @@
       </div>
     </section>
 
-    <!-- Pestañas de artistas con jQuery (rama: artistas) -->
+    <!-- Pestañas de artistas con jQuery -->
     <section class="artistas" aria-label="Artistas del estudio">
+
+            <div class="pestanas">
+        <div class="contenedor" role="tablist" aria-label="Artistas">
+          <button type="button" class="pestana activa" role="tab" id="tab-lucia" aria-controls="panel-lucia" aria-selected="true">Lucía Ferrer</button>
+          <button type="button" class="pestana" role="tab" id="tab-dani" aria-controls="panel-dani" aria-selected="false">Dani Ortega</button>
+          <button type="button" class="pestana" role="tab" id="tab-ines" aria-controls="panel-ines" aria-selected="false">Inés Calvo</button>
+          <button type="button" class="pestana" role="tab" id="tab-marco" aria-controls="panel-marco" aria-selected="false">Marco Sanz</button>
+        </div>
+      </div>
+
+      <div class="contenedor">
+
+        <div class="panel activo" role="tabpanel" id="panel-lucia" aria-labelledby="tab-lucia">
+          <div class="panel__ficha">
+            <img class="panel__retrato" src="media/img/equipo/lucia-ferrer.webp" alt="Retrato de Lucía Ferrer" loading="lazy">
+            <div class="panel__texto">
+              <h2 class="titulo-seccion">Lucía Ferrer</h2>
+              <p class="texto-fino">Lucía tatúa desde 2017 y se ha especializado en fine line y motivos botánicos. Le gustan las piezas pequeñas y delicadas, de trazo fino y con mucho aire, pensadas para envejecer bien en la piel. Antes de cada cita prepara un boceto a mano que ajusta contigo hasta que encaja con tu idea.</p>
+              <ul class="etiquetas-estilo">
+              <li>Fine line</li>
+              <li>Botánico</li>
+              <li>Micro</li>
+              </ul>
+              <a href="cita.html" class="btn btn--relleno">Pide cita con Lucía</a>
+            </div>
+          </div>
+
+          <div class="panel__obras">
+            <img src="media/img/galeria/fineline-02.webp" alt="Tatuaje fine line en antebrazo, de Lucía Ferrer" loading="lazy" data-aos="fade-up" data-aos-delay="0">
+            <img src="media/img/galeria/fineline-03.webp" alt="Tatuaje fine line en clavícula, de Lucía Ferrer" loading="lazy" data-aos="fade-up" data-aos-delay="100">
+            <img src="media/img/galeria/fineline-01.webp" alt="Tatuaje fine line en columna, de Lucía Ferrer" loading="lazy" data-aos="fade-up" data-aos-delay="200">
+            <img src="media/img/galeria/fineline-04.webp" alt="Tatuaje fine line en antebrazo y muñeca, de Lucía Ferrer" loading="lazy" data-aos="fade-up" data-aos-delay="300">
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-dani" aria-labelledby="tab-dani" hidden>
+          <div class="panel__ficha">
+            <img class="panel__retrato" src="media/img/equipo/dani-ortega.webp" alt="Retrato de Dani Ortega" loading="lazy">
+            <div class="panel__texto">
+              <h2 class="titulo-seccion">Dani Ortega</h2>
+              <p class="texto-fino">Dani lleva más de diez años tatuando y trabaja con negro sólido, geometría y patrones de inspiración tribal. Le gustan las piezas grandes que siguen la forma del cuerpo, como espaldas, brazos y piernas completos. Las planifica por sesiones para que el proceso sea cómodo y el negro quede uniforme.</p>
+              <ul class="etiquetas-estilo">
+              <li>Blackwork</li>
+              <li>Geométrico</li>
+              <li>Piezas grandes</li>
+              </ul>
+              <a href="cita.html" class="btn btn--relleno">Pide cita con Dani</a>
+            </div>
+          </div>
+
+          <div class="panel__obras">
+            <img src="media/img/galeria/blackwork-01.webp" alt="Tatuaje blackwork en espalda completa, de Dani Ortega" loading="lazy" data-aos="fade-up" data-aos-delay="0">
+            <img src="media/img/galeria/blackwork-03.webp" alt="Tatuaje blackwork en espalda alta, de Dani Ortega" loading="lazy" data-aos="fade-up" data-aos-delay="100">
+            <img src="media/img/galeria/blackwork-04.webp" alt="Tatuaje blackwork en antebrazo, de Dani Ortega" loading="lazy" data-aos="fade-up" data-aos-delay="200">
+            <img src="media/img/galeria/blackwork-02.webp" alt="Tatuaje blackwork en brazo completo, de Dani Ortega" loading="lazy" data-aos="fade-up" data-aos-delay="300">
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-ines" aria-labelledby="tab-ines" hidden>
+          <div class="panel__ficha">
+            <img class="panel__retrato" src="media/img/equipo/ines-calvo.webp" alt="Retrato de Inés Calvo" loading="lazy">
+            <div class="panel__texto">
+              <h2 class="titulo-seccion">Inés Calvo</h2>
+              <p class="texto-fino">Inés viene de la ilustración y dibuja cada pieza ornamental a medida, con filigranas, enredaderas y encajes que acompañan el movimiento del cuerpo. Trabaja sobre todo hombros, costados y brazos. Le gusta diseñar en la propia piel con rotulador antes de tatuar para ajustar cada curva.</p>
+              <ul class="etiquetas-estilo">
+              <li>Ornamental</li>
+              <li>Filigrana</li>
+              <li>A medida</li>
+              </ul>
+              <a href="cita.html" class="btn btn--relleno">Pide cita con Inés</a>
+            </div>
+          </div>
+
+          <div class="panel__obras">
+            <img src="media/img/galeria/ornamental-01.webp" alt="Tatuaje ornamental en hombro, de Inés Calvo" loading="lazy" data-aos="fade-up" data-aos-delay="0">
+            <img src="media/img/galeria/ornamental-02.webp" alt="Tatuaje ornamental en costado, de Inés Calvo" loading="lazy" data-aos="fade-up" data-aos-delay="100">
+            <img src="media/img/galeria/ornamental-03.webp" alt="Tatuaje ornamental en antebrazo, de Inés Calvo" loading="lazy" data-aos="fade-up" data-aos-delay="200">
+            <img src="media/img/galeria/ornamental-04.webp" alt="Tatuaje ornamental en hombro y brazo, de Inés Calvo" loading="lazy" data-aos="fade-up" data-aos-delay="300">
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-marco" aria-labelledby="tab-marco" hidden>
+          <div class="panel__ficha">
+            <img class="panel__retrato" src="media/img/equipo/marco-sanz.webp" alt="Retrato de Marco Sanz" loading="lazy">
+            <div class="panel__texto">
+              <h2 class="titulo-seccion">Marco Sanz</h2>
+              <p class="texto-fino">Marco es calígrafo y tatuador. Diseña letras a mano, desde góticas y caligrafía clásica hasta tipografías inventadas para cada palabra, y cuida que se lean bien con los años. Si tienes una frase o un nombre, te propone varias versiones antes de elegir la definitiva.</p>
+              <ul class="etiquetas-estilo">
+              <li>Lettering</li>
+              <li>Caligrafía</li>
+              <li>Letras a mano</li>
+              </ul>
+              <a href="cita.html" class="btn btn--relleno">Pide cita con Marco</a>
+            </div>
+          </div>
+
+          <div class="panel__obras">
+            <img src="media/img/galeria/lettering-01.webp" alt="Tatuaje lettering en antebrazo, de Marco Sanz" loading="lazy" data-aos="fade-up" data-aos-delay="0">
+            <img src="media/img/galeria/lettering-02.webp" alt="Tatuaje lettering en antebrazo, de Marco Sanz" loading="lazy" data-aos="fade-up" data-aos-delay="100">
+            <img src="media/img/galeria/lettering-03.webp" alt="Tatuaje lettering en costado, de Marco Sanz" loading="lazy" data-aos="fade-up" data-aos-delay="200">
+            <img src="media/img/galeria/lettering-04.webp" alt="Tatuaje lettering en hombro, de Marco Sanz" loading="lazy" data-aos="fade-up" data-aos-delay="300">
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Llamada a la acción -->
     <section class="cta seccion-oscura">
+      <div class="contenedor">
+        <h2 id="titulo-cta" class="titulo-seccion" data-aos="fade-up">¿No sabes con quién?<br>Te <span class="azul">orientamos</span> en la cita.</h2>
+        <a href="cita.html" class="btn btn--relleno">Pide cita</a>
+      </div>
     </section>
   </main>
 
