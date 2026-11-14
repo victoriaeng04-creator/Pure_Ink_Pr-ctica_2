@@ -218,8 +218,21 @@ const $modal = $('.modal');
     });
   }
 
-  /* Formulario de cita (rama: cita)
-     Validación al enviar: campos obligatorios, email y teléfono,
-     mensajes de error junto a cada campo. */
+  /* Formulario de cita (rama: cita) */
+
+  const $form = $('.formulario');
+  if ($form.length) {
+    const $idea = $('#idea');
+
+    
+    function marcar($campo, mensaje) {
+      const $caja = $campo.closest('.campo');
+      $caja.toggleClass('error', Boolean(mensaje));
+      $caja.find('.campo__error').text(mensaje || '');
+      $campo.attr('aria-invalid', mensaje ? 'true' : 'false');
+      return !mensaje;
+    }
+
+  }  
 
 });
