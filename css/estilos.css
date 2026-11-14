@@ -483,7 +483,7 @@ p { margin: 0; }
   background-color: var(--blanco);
   background-image: radial-gradient(ellipse 130% 170% at 50% 130%, rgba(21, 48, 255, .35) 0%, rgba(21, 48, 255, .14) 40%, rgba(21, 48, 255, 0) 85%);
 }
-
+.cabecera-pagina--halo-suave h1 { color: var(--azul); }
 
 .pestanas { border-bottom: 1px solid var(--negro); overflow-x: auto; }
 .pestanas .contenedor { display: flex; }
