@@ -233,31 +233,36 @@ const $modal = $('.modal');
       return !mensaje;
     }
 
-  }  
+    
 
+  function validar($campo) {
+    const valor = $.trim($campo.val());
+        switch ($campo.attr('id')) {
+          case 'nombre':
+            return marcar($campo, valor.length < 2 ? 'Escribe tu nombre.' : '');
+          case 'telefono':
+            return marcar($campo, valor && !/^[+]?[0-9 ]{9,15}$/.test(valor) ? 'Escribe un teléfono válido (9 cifras).' : '');
+          case 'email':
+            return marcar($campo, !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor) ? 'Escribe un email válido (ej. nombre@correo.com).' : '');
+          case 'zona':
+            return marcar($campo, valor === '' ? 'Dinos en qué zona del cuerpo.' : '');
+          case 'idea':
+            return marcar($campo, valor.length < 20 ? 'Cuéntanos un poco más (mínimo 20 caracteres).' : '');
+          case 'edad':
+            return marcar($campo, !$campo.is(':checked') ? 'Tienes que ser mayor de 18 años.' : '');
+          case 'privacidad':
+            return marcar($campo, !$campo.is(':checked') ? 'Acepta la política de privacidad para continuar.' : '');
+          default:
+            return true;
+        }
+      }
+      
+      const $aValidar = $('#nombre, #telefono, #email, #zona, #idea, #edad, #privacidad');
+
+    $aValidar.on('blur change', function () { validar($(this)); });
+
+    $idea.on('input', function () { $('.idea__contador').text($.trim($(this).val()).length); });
+  }
 });
 
 
-function validar($campo) {
-  const valor = $.trim($campo.val());
-      switch ($campo.attr('id')) {
-        case 'nombre':
-          return marcar($campo, valor.length < 2 ? 'Escribe tu nombre.' : '');
-        case 'telefono':
-          return marcar($campo, valor && !/^[+]?[0-9 ]{9,15}$/.test(valor) ? 'Escribe un teléfono válido (9 cifras).' : '');
-        case 'email':
-          return marcar($campo, !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor) ? 'Escribe un email válido (ej. nombre@correo.com).' : '');
-        case 'zona':
-          return marcar($campo, valor === '' ? 'Dinos en qué zona del cuerpo.' : '');
-        case 'idea':
-          return marcar($campo, valor.length < 20 ? 'Cuéntanos un poco más (mínimo 20 caracteres).' : '');
-        case 'edad':
-          return marcar($campo, !$campo.is(':checked') ? 'Tienes que ser mayor de 18 años.' : '');
-        case 'privacidad':
-          return marcar($campo, !$campo.is(':checked') ? 'Acepta la política de privacidad para continuar.' : '');
-        default:
-          return true;
-      }
-    }
-
-    const $aValidar = $('#nombre, #telefono, #email, #zona, #idea, #edad, #privacidad');
