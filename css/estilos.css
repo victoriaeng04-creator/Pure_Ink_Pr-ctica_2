@@ -364,7 +364,7 @@ p { margin: 0; }
 .estudio__textos { display: grid; gap: var(--e-4); max-width: 820px; margin-inline: auto; }
 .estudio__segundo { display: none; }
 
-/* 10. Inicio · Galería con filtros (rama: inicio-galeria) */
+/* 10. Inicio - Galería con filtros (rama: inicio-galeria) */
 .galeria-inicio {
   padding-block: var(--e-7);
   border-top: 1px solid var(--linea);
@@ -374,6 +374,8 @@ p { margin: 0; }
 .galeria-inicio .filtros { justify-content: flex-start; }
 .galeria-inicio .rejilla { text-align: left; }
 .galeria-inicio__mas { margin-top: var(--e-5); }
+
+.galeria { padding-block: var(--e-5) var(--e-7); }
 
 
 .obra { margin: 0; display: flex; flex-direction: column; gap: var(--e-1); }
@@ -403,6 +405,9 @@ p { margin: 0; }
   color: var(--gris-texto);
 }
 .obra--extra { display: none; } 
+.obra:nth-child(odd) img { filter: grayscale(1); }
+.rejilla .obra:nth-child(odd) .obra__foto:hover img { filter: grayscale(1); }
+
 
 /* 11. Piezas recientes */
 .recientes { padding-block: var(--e-7); }
