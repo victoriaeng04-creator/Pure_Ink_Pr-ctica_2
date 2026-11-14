@@ -530,6 +530,74 @@ p { margin: 0; }
 .modal__boton:hover { background: var(--negro); border-color: var(--negro); color: var(--blanco); }
 body.modal-abierto { overflow: hidden; }
 
+
+/* 16. Cita previa (rama: cita) */
+.cita { padding-block: var(--e-5) var(--e-7); }
+.cita__rejilla { display: grid; gap: var(--e-5); }
+.formulario { display: flex; flex-direction: column; gap: 22px; }
+.formulario__campos { display: grid; gap: 22px; }
+.campo { display: flex; flex-direction: column; gap: 10px; font-family: var(--fuente-detalles); font-size: 14px; font-weight: 500; }
+.campo input:not([type="checkbox"]),
+.campo select {
+  height: 50px;
+  border: 0;
+  border-bottom: 1.5px solid var(--negro);
+  background: transparent;
+  font: 400 16px var(--fuente-texto);
+  color: var(--negro);
+}
+.campo textarea {
+  padding: 14px;
+  border: 1.5px solid var(--negro);
+  background: transparent;
+  font: 400 16px/1.5 var(--fuente-texto);
+  resize: vertical;
+}
+.campo--check label { display: flex; gap: 12px; align-items: center; font-family: var(--fuente-texto); font-weight: 400; }
+.campo--check input { width: 20px; height: 20px; flex: none; accent-color: var(--azul); }
+.campo__ayuda { color: var(--gris-texto); font-size: 12px; font-family: var(--fuente-texto); font-weight: 400; }
+.campo__error { color: #b3261e; font-size: 12px; font-family: var(--fuente-texto); }
+.campo__error:empty { display: none; }
+.campo.error input,
+.campo.error select,
+.campo.error textarea { border-color: #b3261e; border-bottom-width: 2px; }
+.formulario .btn { width: 100%; }
+.formulario__ok {
+  padding: var(--e-2) var(--e-3);
+  background: var(--azul);
+  color: var(--blanco);
+  font-weight: 500;
+}
+
+.como-funciona {
+  align-self: start;
+  padding: 28px 24px;
+  background: var(--azul);
+  color: var(--blanco);
+}
+.como-funciona h3 { font-size: 28px; text-transform: uppercase; margin-bottom: var(--e-3); }
+.como-funciona ol { display: grid; gap: var(--e-2); margin: 0 0 var(--e-3); padding: 0; list-style: none; font-weight: var(--peso-fino); font-size: 17px; }
+.como-funciona li { display: flex; gap: 14px; align-items: baseline; }
+.como-funciona li b { font-family: var(--fuente-detalles); font-size: 22px; font-weight: 700; }
+.como-funciona__senal { padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, .5); font-size: 12px; line-height: 1.5; }
+.como-funciona .etiqueta { display: block; margin-bottom: 6px; color: var(--blanco); }
+
+.donde { display: grid; }
+.donde__texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--e-2);
+  padding: var(--e-5) var(--margen);
+  background: var(--azul);
+  color: var(--blanco);
+}
+.donde .etiqueta { color: var(--blanco); }
+.donde h2 { font-size: 28px; }
+.donde__enlace { align-self: flex-start; padding-bottom: 4px; border-bottom: 1.5px solid currentColor; font-family: var(--fuente-detalles); font-weight: 600; }
+.donde__mapa { width: 100%; height: 240px; border: 0; filter: grayscale(1); }
+
+
 /* 7. Breakpoints */
 
 /* Tablet */
