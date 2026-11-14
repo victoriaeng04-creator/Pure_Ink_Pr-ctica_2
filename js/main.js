@@ -275,6 +275,21 @@ const $modal = $('.modal');
     $aValidar.on('blur change', function () { validar($(this)); });
 
     $idea.on('input', function () { $('.idea__contador').text($.trim($(this).val()).length); });
+
+    $form.on('submit', function (e) {
+      e.preventDefault();
+      let todoBien = true;
+      $aValidar.each(function () { if (!validar($(this))) { todoBien = false; } });
+
+      if (!todoBien) {
+        $form.find('.campo.error').first().find('input, select, textarea').trigger('focus');
+        return;
+      }
+
+      $form.find('.formulario__ok').removeAttr('hidden').hide().fadeIn(400);
+      this.reset();
+      $('.idea__contador').text('0');
+    });
   }
 });
 
