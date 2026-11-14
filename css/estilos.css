@@ -448,15 +448,29 @@ p { margin: 0; }
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--e-3) var(--gutter);
 }
-.artista-tarjeta { display: flex; flex-direction: column; gap: 6px; }
+.artista-tarjeta { position:relative; display: flex; flex-direction: column; gap: 6px; }
 .artista-tarjeta img {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  filter: grayscale(1) contrast(.85);   /* gris; a todo contraste al pasar el ratón */
-  transition: filter var(--transicion);
+  filter: grayscale(1);  
 }
-.artista-tarjeta:hover img { filter: none; }
+.artista-tarjeta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--azul);
+  mix-blend-mode: multiply;   /* tiñe la foto: los blancos se vuelven azules y los negros siguen negros */
+  opacity: 0;
+  transition: opacity var(--transicion);
+  pointer-events: none;
+  z-index: 1;   /* por encima de la foto */
+}
+.artista-tarjeta:hover::before,
+.artista-tarjeta:focus-visible::before { opacity: 1; }
 .artista-tarjeta b { font-family: var(--fuente-titulos); font-size: 17px; margin-top: 4px; }
 .equipo__boton { display: flex; justify-content: center; margin-top: var(--e-5); }
 .equipo__boton .btn { width: 100%; }
@@ -500,7 +514,8 @@ p { margin: 0; }
 .pestana.activa { background: var(--negro); color: var(--blanco); }
 .panel { padding-block: var(--e-5) var(--e-7); }
 .panel__ficha { display: grid; gap: var(--e-4); }
-.panel__retrato { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.panel__retrato { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: grayscale(1);}
+.panel__obras img:nth-child(odd) { filter: grayscale(1); }
 .panel__texto { display: flex; flex-direction: column; align-items: flex-start; gap: var(--e-3); }
 .etiquetas-estilo { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
 .etiquetas-estilo li {
