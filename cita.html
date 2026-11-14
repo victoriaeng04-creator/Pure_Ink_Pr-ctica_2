@@ -45,7 +45,7 @@
 
   <main id="top">
     <!-- Cabecera de página -->
-    <section class="cabecera-pagina">
+    <section class="cabecera-pagina cabecera-pagina--halo seccion-oscura">
       <div class="contenedor">
         <h1>Cita previa</h1>
       </div>
@@ -53,14 +53,100 @@
 
     <!-- Pasos + formulario con validación jQuery (rama: cita) -->
     <section class="cita" aria-label="Formulario de cita">
+            <h2 id="titulo-formulario" class="solo-lector">Formulario de cita</h2>
+      <div class="contenedor cita__rejilla">
+        <form class="formulario" novalidate>
+          <div class="formulario__campos">
+            <div class="campo">
+              <label for="nombre">Nombre *</label>
+              <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+              <p class="campo__error" aria-live="polite"></p>
+            </div>
+            <div class="campo">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" autocomplete="tel">
+              <p class="campo__error" aria-live="polite"></p>
+            </div>
+            <div class="campo campo--ancho">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+              <p class="campo__error" aria-live="polite"></p>
+            </div>
+            <div class="campo">
+              <label for="artista">Artista</label>
+              <select id="artista" name="artista">
+                <option value="">Sin preferencia</option>
+                <option value="lucia">Lucía Ferrer</option>
+                <option value="dani">Dani Ortega</option>
+                <option value="ines">Inés Calvo</option>
+                <option value="marco">Marco Sanz</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="estilo">Estilo</label>
+              <select id="estilo" name="estilo">
+                <option value="">Elige un estilo</option>
+                <option value="fineline">Fine line</option>
+                <option value="blackwork">Blackwork</option>
+                <option value="ornamental">Ornamental</option>
+                <option value="lettering">Lettering</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="zona">Zona del cuerpo *</label>
+              <input type="text" id="zona" name="zona" required>
+              <p class="campo__error" aria-live="polite"></p>
+            </div>
+            <div class="campo">
+              <label for="tamano">Tamaño aproximado (cm)</label>
+              <input type="text" id="tamano" name="tamano" inputmode="numeric">
+            </div>
+            <div class="campo campo--ancho">
+              <label for="idea">Cuéntanos tu idea *</label>
+              <textarea id="idea" name="idea" rows="5" required></textarea>
+              <p class="campo__ayuda"><span class="idea__contador">0</span> / 20 caracteres como mínimo</p>
+              <p class="campo__error" aria-live="polite"></p>
+            </div>
+            <div class="campo">
+              <label for="fecha">Fecha preferida</label>
+              <input type="date" id="fecha" name="fecha">
+            </div>
+          </div>
+          <div class="campo campo--check">
+            <label><input type="checkbox" id="edad" name="edad" required> Confirmo que soy mayor de 18 años *</label>
+            <p class="campo__error" aria-live="polite"></p>
+          </div>
+          <div class="campo campo--check">
+            <label><input type="checkbox" id="privacidad" name="privacidad" required> Acepto la política de privacidad *</label>
+            <p class="campo__error" aria-live="polite"></p>
+          </div>
+          <button type="submit" class="btn btn--relleno">Enviar solicitud</button>
+          <p class="formulario__ok" role="status" hidden>¡Gracias! Hemos recibido tu idea. Te escribimos en menos de 48 horas con presupuesto y fecha.</p>
+        </form>
+
+        <aside class="como-funciona" aria-labelledby="titulo-como">
+          <h3 id="titulo-como">Cómo funciona</h3>
+          <ol>
+            <li><b>01</b><span>Nos cuentas tu idea con este formulario.</span></li>
+            <li><b>02</b><span>Te respondemos con presupuesto y fecha.</span></li>
+            <li><b>03</b><span>Diseñamos el boceto contigo y tatuamos.</span></li>
+          </ol>
+    <!-- Preguntas frecuentes (rama: cita) -->
+      <p class="como-funciona__senal"><span class="etiqueta">Señal</span>50 € para reservar la fecha (se descuenta del precio final)</p>
+        </aside>
+      </div>
     </section>
 
-    <!-- Preguntas frecuentes (rama: cita) -->
-    <section class="faq" aria-labelledby="titulo-faq">
-    </section>
 
     <!-- Dónde estamos (rama: cita) -->
     <section class="donde" aria-labelledby="titulo-donde">
+      <div class="donde__texto">
+        <p class="etiqueta">Dónde estamos</p>
+        <h2 id="titulo-donde" class="titulo-seccion">Malasaña, Madrid</h2>
+        <p>C/ San Vicente Ferrer, 34 · 28004 Madrid<br>Metro Tribunal (L1, L10) · Mar – Sáb · 11:00 – 20:00</p>
+        <a href="https://maps.google.com/?q=Calle+San+Vicente+Ferrer+34,+28004+Madrid" class="donde__enlace">Cómo llegar →</a>
+      </div>
+      <iframe class="donde__mapa" title="Mapa: C/ San Vicente Ferrer, 34, Madrid" src="https://www.google.com/maps?q=Calle+San+Vicente+Ferrer+34,+28004+Madrid&amp;output=embed" loading="lazy"></iframe>
     </section>
   </main>
 
