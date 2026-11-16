@@ -80,15 +80,12 @@ $(function () {
       $filtros.find('.filtro').removeClass('activo').attr('aria-pressed', 'false');
       $(this).addClass('activo').attr('aria-pressed', 'true');
 
-      
-      const $ocultas = $obras.filter(':hidden');
-      $obras.removeClass('obra--extra');
-      $ocultas.hide();
-      $(window).off('scroll.galeria');
 
       const $mostrar = filtro === 'todo' ? $obras : $obras.filter('[data-estilo="' + filtro + '"]');
       $obras.not($mostrar).stop(true, true).fadeOut(200);
-      $mostrar.stop(true, true).delay(200).fadeIn(300);
+      $mostrar.stop(true, true).delay(200).fadeIn(300, function () {
+        if (window.AOS) { AOS.refresh(); }
+      });
 
       if ($contador.length) {
         $contador.text(filtro === 'todo'
@@ -151,23 +148,6 @@ $(function () {
 
 
   /* Galería + modal */
-
-  const $extras = $('.galeria .obra--extra');
-  if ($extras.length) {
-    const $rejilla = $('.galeria .rejilla');
-
-    $(window).on('scroll.galeria', function () {
-      const finRejilla = $rejilla.offset().top + $rejilla.outerHeight();
-      const finVentana = $(window).scrollTop() + $(window).height();
-      if (finVentana > finRejilla - 40) {
-        $(window).off('scroll.galeria');   // solo una vez
-        $extras.removeClass('obra--extra').hide().each(function (i) {
-          $(this).delay(120 * i).fadeIn(500);
-        });
-        if (window.AOS) { AOS.refresh(); }
-      }
-    });
-  }
 
 const $modal = $('.modal');
   if ($modal.length) {

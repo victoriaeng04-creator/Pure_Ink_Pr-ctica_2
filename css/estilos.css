@@ -404,10 +404,8 @@ p { margin: 0; }
   font-weight: 600;
   color: var(--gris-texto);
 }
-.obra--extra { display: none; } 
 .obra:nth-child(odd) img { filter: grayscale(1); }
 .rejilla .obra:nth-child(odd) .obra__foto:hover img { filter: grayscale(1); }
-
 
 /* 11. Piezas recientes */
 .recientes { padding-block: var(--e-7); }
