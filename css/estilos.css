@@ -696,7 +696,6 @@ body.modal-abierto { overflow: hidden; }
   .rejilla { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .galeria-inicio .filtros { justify-content: center; }
   .galeria-inicio__mas { width: auto; }
-  .galeria-inicio .rejilla:not(.cargada) .obra:nth-child(n+5) { display: flex; } 
 
   .slider { height: 380px; }
   .slide { padding: var(--e-3); }
